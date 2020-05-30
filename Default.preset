@@ -212,6 +212,7 @@ DisableMediaSharing             # EnableMediaSharing
 # UninstallPowerShellV2         # InstallPowerShellV2
 # UninstallPowerShellISE        # InstallPowerShellISE
 # InstallLinuxSubsystem         # UninstallLinuxSubsystem
+# InstallVirtualMachinePlatform # UninstallVirtualMachinePlatform
 # InstallHyperV                 # UninstallHyperV
 # UninstallSSHClient            # InstallSSHClient
 # InstallSSHServer              # UninstallSSHServer

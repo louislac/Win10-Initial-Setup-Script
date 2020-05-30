@@ -3452,6 +3452,19 @@ Function UninstallLinuxSubsystem {
 	Get-WindowsOptionalFeature -Online | Where-Object { $_.FeatureName -eq "Microsoft-Windows-Subsystem-Linux" } | Disable-WindowsOptionalFeature -Online -NoRestart -WarningAction SilentlyContinue | Out-Null
 }
 
+# Update VirtualMachinePlatform
+# Note: require for WSL2
+Function InstallVirtualMachinePlatform {
+	Write-Output "Installing VirtualMachinePlatform..."
+	Get-WindowsOptionalFeature -Online | Where-Object { $_.FeatureName -eq "VirtualMachinePlatform" } | Enable-WindowsOptionalFeature -Online -NoRestart -WarningAction SilentlyContinue | Out-Null
+}
+
+# Uninstall VirtualMachinePlatform
+Function UninstallVirtualMachinePlatform {
+	Write-Output "Uninstalling VirtualMachinePlatform..."
+	Get-WindowsOptionalFeature -Online | Where-Object { $_.FeatureName -eq "VirtualMachinePlatform" } | Disable-WindowsOptionalFeature -Online -NoRestart -WarningAction SilentlyContinue | Out-Null
+}
+
 # Install Hyper-V - Not applicable to Home
 Function InstallHyperV {
 	Write-Output "Installing Hyper-V..."
