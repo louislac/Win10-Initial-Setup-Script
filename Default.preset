@@ -188,6 +188,7 @@ HideShareMenu                       # ShowShareMenu
 # DisableThumbnails                 # EnableThumbnails
 DisableThumbnailCache               # EnableThumbnailCache
 DisableThumbsDBOnNetwork            # EnableThumbsDBOnNetwork
+CollapseStartMenuAppList            # DisableStartMenuAppList             # EnableStartMenuAppList
 
 ### Application Tweaks ###
 # DisableOneDrive                   # EnableOneDrive

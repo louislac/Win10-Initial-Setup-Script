@@ -2875,6 +2875,24 @@ Function EnableThumbsDBOnNetwork {
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "DisableThumbsDBOnNetworkFolders" -ErrorAction SilentlyContinue
 }
 
+# CollapseAll apps list in Start Menu
+Function CollapseStartMenuAppList {
+	Write-Output "Disabling creation of Thumbs.db on network folders..."
+	Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "NoStartMenuMorePrograms" -Type DWord -Value 2
+}
+
+# Disable All apps list in Start Menu
+Function DisableStartMenuAppList {
+	Write-Output "Disabling creation of Thumbs.db on network folders..."
+	Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "NoStartMenuMorePrograms" -Type DWord -Value 1
+}
+
+# Enable All apps list in Start - Windows default value
+Function EnableStartMenuAppList {
+	Write-Output "Enabling creation of Thumbs.db on network folders..."
+	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "NoStartMenuMorePrograms" -Type DWord -Value 0
+}
+
 ##########
 #endregion Explorer UI Tweaks
 ##########
